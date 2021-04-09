@@ -1,0 +1,3 @@
+<h1>Graph of each City</h1>
+<%= line_chart @city.group(:month).average(:energy_production) %>
+<%= link_to "Information about each home", toppages_index_path %>

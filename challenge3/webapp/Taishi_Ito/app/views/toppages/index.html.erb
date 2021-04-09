@@ -1,0 +1,23 @@
+<h1>Information about each home</h1>
+<table border="1">
+  <tr>
+    <th>Firstname</th><th>Lastname</th><th>City</th><th>Average energy production</th><th>Number of people</th><th>Child (Yes/No)</th>
+  </tr>
+    <% @firstname2.zip(@house_all, @ene_sum2, @ene_cou2).each do |f,h,e_s,e_c| %>
+      <tr>
+      <td><%= f.firstname %></td>
+      <td><%= h.lastname %></td>
+      <td><%= h.city %></td>
+      <td><%= e_s/e_c %></td>
+      <td><%= h.num_of_people %></td>
+      <td><%=
+              if h.has_child == true
+                "Yes"
+              else
+                "No"
+              end
+           %></td>
+    <% end %>
+</table>
+
+<%= link_to "Graph of each City", show_index_path %>
