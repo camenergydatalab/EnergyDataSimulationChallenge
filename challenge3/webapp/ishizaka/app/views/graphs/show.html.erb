@@ -1,0 +1,9 @@
+<%= javascript_pack_tag 'hello_vue' %>
+<%= stylesheet_pack_tag 'hello_vue' %>
+<div class="l-wrap">
+  <h3 class="l-heading"><%= @name %>'s Energy Production</h3>
+  <div id='vue'>
+    <%= hidden_field_tag "datasets", "", data: { energy: @energy_production, daylight: @daylight, temperature: @temperature, dates: @date } %>
+      <chart></chart>
+  </div>
+</div>

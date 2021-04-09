@@ -1,0 +1,23 @@
+<div class="l-wrap">
+  <h3 class="l-heading">House Index</h3>
+  <div class="list-box">
+    <div class="list -title">
+      <div class="id">id</div>
+      <div class="name">name</div>
+      <div class="city">city</div>
+      <div class="people">num of prople</div>
+      <div class="child">has child?</div>
+    </div>
+    <% @houses.each do |house| %>
+      <div class="list">
+        <div class="id"><%= house.id %></div>
+        <div class="name">
+          <%= link_to house.first_name + ' ' + house.last_name, graph_path(house.id) %>
+        </div>
+        <div class="city"><%= house.city %></div>
+        <div class="people"><%= house.num_of_people %>人</div>
+        <div class="child"><%= house.has_child %></div>
+      </div>
+    <% end %>
+  </div>
+</div>
